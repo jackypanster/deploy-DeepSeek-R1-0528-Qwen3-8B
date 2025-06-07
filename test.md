@@ -7,7 +7,7 @@ This document provides `curl` commands to test the functionality of the deployed
 This command checks if the model is correctly loaded and served.
 
 ```bash
-curl http://localhost:8000/v1/models
+curl http://localhost:8000/v1/models | jq
 ```
 
 Expected output (will vary slightly, but should list the "coder" model):
@@ -55,7 +55,7 @@ curl http://localhost:8000/v1/completions \
     "prompt": "San Francisco is a",
     "max_tokens": 50,
     "temperature": 0.7
-  }'
+  }' | jq
 ```
 
 ## 3. Text Completion (Longer Context & More Tokens)
@@ -70,7 +70,7 @@ curl http://localhost:8000/v1/completions \
     "prompt": "The DALL·E 2 paper, titled \"Hierarchical Text-Conditional Image Generation with CLIP Latents,\" was first published on arXiv on April 13, 2022. It describes a system that can generate realistic images and art from a description in natural language. The system builds upon the work of DALL·E and CLIP, previous models developed by OpenAI. Explain the key innovations of DALL·E 2 compared to its predecessor DALL·E, focusing on image quality and generation diversity.",
     "max_tokens": 200,
     "temperature": 0.5
-  }'
+  }' | jq
 ```
 
 ## 4. Chat Completion (Basic)

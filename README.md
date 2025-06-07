@@ -37,7 +37,7 @@ docker run \
   --model /models \
   --served-model-name coder \
   --tensor-parallel-size 4 \
-  --gpu-memory-utilization 0.92 \
+  --gpu-memory-utilization 0.93 \
   --dtype float16 \
   --max-model-len 65536 \
   --trust-remote-code \
