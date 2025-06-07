@@ -5,7 +5,7 @@ docker run \
   -d \
   --gpus all \
   --name coder \
-  --shm-size 16g \
+  --shm-size 64g \
   --ulimit memlock=-1 \
   --restart always \
   --ipc=host \
@@ -21,6 +21,8 @@ docker run \
   --max-model-len 65536 \
   --trust-remote-code \
   --load-format safetensors \
-  --disable-custom-all-reduce
+  --swap-space 32 \
+  --enforce-eager \
+  --max-num-batched-tokens 8192
 
 docker logs -f coder
