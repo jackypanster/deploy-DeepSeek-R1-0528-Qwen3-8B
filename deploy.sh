@@ -23,6 +23,7 @@ docker run \
   --load-format safetensors \
   --swap-space 32 \
   --enforce-eager \
-  --max-num-batched-tokens 8192
+  --max-num-batched-tokens 8192 \
+  --chat-template /models/qwen3_programming.jinja
 
 docker logs -f coder
